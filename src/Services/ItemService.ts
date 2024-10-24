@@ -33,24 +33,6 @@ const ItemService = (
             }
         }
 
-        const putItem = async (editedItem: IItem) => {
-            try {
-                const response = await axios.put(ItemEndpoint, editedItem);
-                return response.data;
-            }catch(error){
-                console.error("Error with Put Item",error);
-            }
-        }
-
-        const postItem = async (newItem: IItem) => {
-            try {
-                const response = await axios.post(ItemEndpoint, newItem);
-                return response.data;
-            }catch(error){
-                console.error("Error with Post Item",error);
-            }
-        }
-
         const getImage = async (id: number) => {
             try {
                 const response = await axios.get(ItemEndpoint + "/image/" + id);
@@ -65,8 +47,6 @@ const ItemService = (
             getAllItems,
             getById,
             getByName,
-            putItem,
-            postItem,
             getImage
         }
 
